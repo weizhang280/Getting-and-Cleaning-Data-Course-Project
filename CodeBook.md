@@ -6,7 +6,7 @@
 
 subject:    An identifier of the subject who carried out the experiment
             
-            value: 1:30
+        value: 1:30
 
     
 activity:   Each person performed six activities wearing a smartphone
