@@ -52,8 +52,7 @@ The following files are available for the train and test data. Their description
 
 
 ==============================
-### Illustration of run_analysis.R
-==============================
+## Illustration of run_analysis.R
 
 
 ### Install and load pacakges
@@ -210,7 +209,7 @@ The following files are available for the train and test data. Their description
 
                 mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
                 
-                ###mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    66
+                mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    66
  
                 
                 
@@ -218,7 +217,8 @@ The following files are available for the train and test data. Their description
 
 
         When adding y_combined(activity observations) to mainDataSet, the values of activity are integer. 
-        To re-assign descriptive names, need to have y_combined dataframe inner_join with activty label      dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
+        To re-assign descriptive names, need to have y_combined dataframe inner_join with activty label
+        dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
         
 
         ##load activity_labels.txt
