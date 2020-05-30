@@ -13,12 +13,12 @@ activity:   Each person performed six activities wearing a smartphone
 
             value:
             
-            WALKING
-            WALKING_UPSTAIRS
-            WALKING_DOWNSTAIRS
-            SITTING
-            STANDING
-            LAYING
+        WALKING
+        WALKING_UPSTAIRS
+        WALKING_DOWNSTAIRS
+        SITTING
+        STANDING
+        LAYING
 
        
 mean() & std():     mean() and std() variables (total=66) for each measurement in the below list from
