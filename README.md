@@ -13,14 +13,13 @@ variable for each activity and each subject.
 
 
 ### Project Files:
-=======================
 1.  run_analysis.R
 2.  tidy_dataset.csv
 3.  README.md
 4.  CodeBook.md for tidy data set
 
 
-### Project Files Location:
+### Project Location:
 https://github.com/weizhang280/Getting-and-Cleaning-Data-Course-Project
 
 
@@ -51,27 +50,20 @@ The following files are available for the train and test data. Their description
 
 - 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
-
-
-====================
-### run_analysis.R
-====================
+==============================
+### Illustration of run_analysis.R
+==============================
 
 
-### Install pacakges
+### Install and load pacakges
 - install.packages(dplyr)
 - install.packages(tidyr)
 - install.packages(stringr)
 
-### lOad to current session
-library(dplyr)
-library(tidyr)
-library(stringr)
+- library(dplyr)
+- library(tidyr)
+- library(stringr)
 
 
 ### Implement Project Requirements 
@@ -150,11 +142,9 @@ library(stringr)
                 y_combined              [1] 10299     1
                 subject_combined        [1] 10299     1
                 
-                code:
-                
                 mainDataSet <- cbind(subject_combined, y_combined, x_combined) 
                 
-                ###mainDataSet is the required one data set, its dimension: [1] 10299   563
+                mainDataSet is the required one data set, its dimension: [1] 10299   563
          
                 
                 
@@ -228,7 +218,7 @@ library(stringr)
 
 
         When adding y_combined(activity observations) to mainDataSet, the values of activity are integer. 
-        To re-assign descriptive names, need to have y_combined dataframe inner_join with activty label                 dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
+        To re-assign descriptive names, need to have y_combined dataframe inner_join with activty label      dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
         
 
         ##load activity_labels.txt
@@ -253,6 +243,7 @@ library(stringr)
         ## assign activity column of the extracted main dataset with descriptive names in labeled_y_combined
         mainDataSet_extract$activity <- labeled_y_combined$V2
     
+    
         
 4. Appropriately labels the data set with descriptive variable names.
 
@@ -275,6 +266,7 @@ library(stringr)
                                                              "-Z"="-Z_direction"
                                                              ))
                                                              
+     
                                           
                                                              
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each 
@@ -287,6 +279,7 @@ variable for each activity and each subject.
                 group_by(subject, activity) %>% 
                 summarise_all(mean) %>% 
                 gather(key="mean() & std()", value="average", -c('subject', 'activity'))
+  
                 
 
 6. Write and read tidy_dataset.csv file
