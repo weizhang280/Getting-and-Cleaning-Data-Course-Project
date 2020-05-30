@@ -69,7 +69,7 @@ colnames(mainDataSet) <- c("subject", "activity", features$V2)
 
 mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
 
-## mainDataSet_extract is the required extracted data set with dimention [1] 10299    66
+## mainDataSet_extract is the required extracted data set with dimention [1] 10299    68
 
 
 ############################################################################################################

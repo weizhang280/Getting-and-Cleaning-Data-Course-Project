@@ -214,7 +214,7 @@ The following files are available for the train and test data. Their description
 
                 mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
                 
-                mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    66
+                mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    68
  
                 
                 
