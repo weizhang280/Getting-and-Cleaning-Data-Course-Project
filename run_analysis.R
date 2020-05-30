@@ -1,8 +1,9 @@
 ############################################################################################################
+##      Getting-and-Cleaning-Data-Course-Project
 ##      Author: Wei Zhang
 ##      Date: 5/27/2020
-
-##                            Course3 project Requirements
+##
+##                            Project Requirements
 ##      1. Merges the training and the test sets to create one data set.
 ##      2. Extracts only the measurements on the mean and standard deviation for each measurement.
 ##      3. Uses descriptive activity names to name the activities in the data set
@@ -11,7 +12,7 @@
 ##         variable for each activity and each subject.
 ############################################################################################################
 
-## lOad library
+##load packages (need to install first if not installed)
 library(dplyr)
 library(tidyr)
 library(stringr)
