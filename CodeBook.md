@@ -11,7 +11,7 @@ subject:    An identifier of the subject who carried out the experiment
     
 activity:   Each person performed six activities wearing a smartphone
 
-            value:
+        value:
             
         WALKING
         WALKING_UPSTAIRS
