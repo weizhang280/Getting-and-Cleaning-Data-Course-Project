@@ -117,9 +117,6 @@ tidy_dataset <- mainDataSet_extract %>%
         summarise_all(mean) %>% 
         gather(key="mean() & std()", value="average", -c('subject', 'activity'))
 
-##format average column to scientific notation
-tidy_dataset$average <- format(tidy_dataset$average, scientific = TRUE)
-     
-##write tidy_DataSet to tidy_dataset.csv file
-write.csv(tidy_dataset, file = "tidy_dataset.csv", row.names = FALSE)
+##write tidy_DataSet to tidy_dataset.txt file
+write.table(tidy_dataset, file = "tidy_dataset.txt", row.names = FALSE)
 

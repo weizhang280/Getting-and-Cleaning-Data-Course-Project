@@ -2,7 +2,7 @@
 ###     Author: Wei Zhang
 ###     Date: 5/27/2020
 
-###     Variables in tidy dataset
+###     Variables in tidy data set
 
 subject:    an identifier of the subject who carried out the experiment
             

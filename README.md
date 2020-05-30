@@ -14,7 +14,7 @@ variable for each activity and each subject.
 
 ### Project Files:
 1.  run_analysis.R
-2.  tidy_dataset.csv
+2.  tidy_dataset.txt, space delimited, read.table("tidy_dataset.txt", header = TRUE, sep = " ")
 3.  README.md
 4.  CodeBook.md for tidy data set
 
@@ -253,7 +253,7 @@ The following files are available for the train and test data. Their description
 4. Appropriately labels the data set with descriptive variable names.
 
 
-        The abbreviated names of featurs can be restored with full words for easy understanding
+        The abbreviated names of features can be restored with full words for easy understanding
         
         #Note: str_replace_all needs stringr package, install and load to current session
 
@@ -288,15 +288,14 @@ variable for each activity and each subject.
   
                 
 
-6. Write and read tidy_dataset.csv file
+6. Write and read tidy_dataset.txt file
+
+        tidy_dataset.txt is a space delimited text file
         
-        ##format average column to scientific notation
-        tidy_dataset$average <- format(tidy_dataset$average, scientific = TRUE)
-                
-        ##write tidy_DataSet to tidy_dataset.csv file
-        write.csv(tidy_dataset, file = "tidy_dataset.csv", row.names = FALSE)
+        ##write tidy_DataSet to tidy_dataset.txt file
+        write.table(tidy_dataset, file = "tidy_dataset.txt", row.names = FALSE)
         
-        ##Read tidy_dataset.csv
-        df <- read.csv("tidy_dataset.csv")
+        ##Read tidy_dataset.txt
+        df <- read.table("tidy_dataset.txt", header = TRUE, sep = " ")
         View(df)
         
