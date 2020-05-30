@@ -52,7 +52,7 @@ The following files are available for the train and test data. Their description
 
 
 ==============================
-## Illustration of run_analysis.R
+## run_analysis.R
 
 
 ### Install and load pacakges
@@ -110,16 +110,19 @@ The following files are available for the train and test data. Their description
                 Combined dataframes:
                 ====================
                 
-                x_combined:     feature measurement observations including train and test. x_train and x_test                                   both have the same column number 561, can be combined by rbind
+                x_combined:     feature measurement observations including train and test. x_train and x_test
+                both have the same column number 561, can be combined by rbind
                                 x_train         [1] 7352  561
                                 X_test          [1] 2947  561
    
-                y_combined:     activity observations including train and test. y_train and y_test                                              both have the same column number 1, can be combined by rbind
+                y_combined:     activity observations including train and test. y_train and y_test
+                both have the same column number 1, can be combined by rbind
                                 y_train         [1] 7352    1
                                 y_test          [1] 2947    1
 
                 subject_combined: 
-                                subject for each observation including train and test. subject_train and                                        subject_test both have the same column number 1, can be combined by rbind
+                                subject for each observation including train and test. subject_train and
+                                subject_test both have the same column number 1, can be combined by rbind
                                 subject_train   [1] 7352    1
                                 subject_test    [1] 2947    1
                                 
@@ -189,7 +192,8 @@ The following files are available for the train and test data. Their description
                 regular expression: (mean|std)\\(\\)(-[X-Z])?$
                 
                 
-        Step2:  assign feature names in feature.txt to columns of the mainDataset arrived from Project                          Requirement#1
+        Step2:  assign feature names in feature.txt to columns of the mainDataset arrived from Project
+        Requirement#1
                 
                 ##load features.txt
                 features <- read.table("dataset/features.txt")
@@ -205,7 +209,8 @@ The following files are available for the train and test data. Their description
 
                 
                 
-        Step3:  keep subject and activity columns, extracts only the measurements on the mean and standard                      deviation for each measurement, 
+        Step3:  keep subject and activity columns, extracts only the measurements on the mean and standard
+        deviation for each measurement, 
 
                 mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
                 
@@ -273,7 +278,8 @@ The following files are available for the train and test data. Their description
 variable for each activity and each subject.
 
 
-        Use dplyr and tidyr, all mean() and std() feature variables can be collapsed into one column "mean() &          std()", mean() on these variables per activity per subject goes to "average" column
+        Use dplyr and tidyr, all mean() and std() feature variables can be collapsed into one column
+        "mean() & std()", mean() on these variables per activity per subject goes to "average" column
         
         tidy_dataset <- mainDataSet_extract %>% 
                 group_by(subject, activity) %>% 
