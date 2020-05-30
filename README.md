@@ -1,16 +1,15 @@
-title: Getting-and-Cleaning-Data-Course-Project
-author: Wei Zhang
-date: 5/29/2020
+###     Getting-and-Cleaning-Data-Course-Project
+###     Author: Wei Zhang
+###     Date: 5/27/2020
 
-############################################################################################################
-##                            Project Requirements
-##      1. Merges the training and the test sets to create one data set.
-##      2. Extracts only the measurements on the mean and standard deviation for each measurement.
-##      3. Uses descriptive activity names to name the activities in the data set
-##      4. Appropriately labels the data set with descriptive variable names.
-##      5. From the data set in step 4, creates a second, independent tidy data set with the average of each 
-##         variable for each activity and each subject.
-############################################################################################################
+###     Project Requirements
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement.
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names.
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each 
+variable for each activity and each subject.
+
 
 
 ### Project Files:
@@ -22,19 +21,14 @@ date: 5/29/2020
 
 
 ### Project Files Location:
-===========================
-Project working directory:     /RStudio/Getting-and-Cleaning-Data-Course-Project/
-dataset location:              /RStudio/Getting-and-Cleaning-Data-Course-Project/dataset/
-Train files location:          /RStudio/Getting-and-Cleaning-Data-Course-Project/dataset/train/
-Test files location:           /RStudio/Getting-and-Cleaning-Data-Course-Project/dataset/test/
+https://github.com/weizhang280/Getting-and-Cleaning-Data-Course-Project
 
 
 ### Data Source
-================
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
 
-The data source includes the following files:
+### The data source includes the following files:
 ==============================================
 
 - 'README.txt'
@@ -64,29 +58,26 @@ The following files are available for the train and test data. Their description
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 
-=========================================================================================
+====================
 ### run_analysis.R
-=========================================================================================
+====================
 
-Packages:
 
-## Install pacakges
-install.packages(dplyr)
-install.packages(tidyr)
-install.packages(stringr)
+### Install pacakges
+- install.packages(dplyr)
+- install.packages(tidyr)
+- install.packages(stringr)
 
-## lOad to current session
+### lOad to current session
 library(dplyr)
 library(tidyr)
 library(stringr)
 
 
 ### Implement Project Requirements 
-==================================
 
 1. Merges the training and the test set to create one data set.
-================================================================
-        
+
         Step1:  load train and test files into dataframes
 
                 Files                                   DataFrame       Dimension
@@ -163,12 +154,12 @@ library(stringr)
                 
                 mainDataSet <- cbind(subject_combined, y_combined, x_combined) 
                 
-                #dimension of mainDataSet:  [1] 10299   563
+                ###mainDataSet is the required one data set, its dimension: [1] 10299   563
          
                 
                 
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-==========================================================================================
+
 
         Step1:  build regular expression to match name pattern
         
@@ -227,16 +218,17 @@ library(stringr)
                 
         Step3:  keep subject and activity columns, extracts only the measurements on the mean and standard                      deviation for each measurement, 
 
-        mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
-        
-        #st#mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    66
+                mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
+                
+                ###mainDataSet_extract is the reuqired extracted dataset, its dimension: [1] 10299    66
  
                 
                 
 3. Uses descriptive activity names to name the activities in the data set 
-==========================================================================
 
-        When adding y_combined(activity observations) to mainDataSet, the values of activity are integer. To                re-assign descriptive names, need to have y_combined dataframe inner_join with activty label                    dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
+
+        When adding y_combined(activity observations) to mainDataSet, the values of activity are integer. 
+        To re-assign descriptive names, need to have y_combined dataframe inner_join with activty label                 dataframe to get a 2 columns dataset labeled_y_combined, col1=activity_id, col2=descriptive label.
         
 
         ##load activity_labels.txt
@@ -263,7 +255,7 @@ library(stringr)
     
         
 4. Appropriately labels the data set with descriptive variable names.
-==========================================================================
+
 
         The abbreviated names of featurs can be restored with full words for easy understanding
         
@@ -287,7 +279,7 @@ library(stringr)
                                                              
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each 
 variable for each activity and each subject.
-====================================================================================================
+
 
         Use dplyr and tidyr, all mean() and std() feature variables can be collapsed into one column "mean() &          std()", mean() on these variables per activity per subject goes to "average" column
         
@@ -296,8 +288,6 @@ variable for each activity and each subject.
                 summarise_all(mean) %>% 
                 gather(key="mean() & std()", value="average", -c('subject', 'activity'))
                 
-
-====================================================================================================
 
 6. Write and read tidy_dataset.csv file
         
