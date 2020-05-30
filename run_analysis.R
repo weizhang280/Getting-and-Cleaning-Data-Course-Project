@@ -35,8 +35,8 @@ subject_train <- read.table("dataset/train/subject_train.txt")
 ##---------load test files---------##
 
 x_test <- read.table("dataset/test/X_test.txt", colClasses = "numeric")
-y_test <- read.table("dataset/test/y_test.txt", header = FALSE, na.strings = "NA")
-subject_test <- read.table("dataset/test/subject_test.txt", header = FALSE, na.strings = "NA")
+y_test <- read.table("dataset/test/y_test.txt")
+subject_test <- read.table("dataset/test/subject_test.txt")
 
 ##---------combine train and test dataframe---------##
 
