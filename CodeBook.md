@@ -1,47 +1,48 @@
-title: CodeBook for tidy_dataset.csv
-author: Wei Zhang
-date: 5/29/2020
+###     Getting-and-Cleaning-Data-Course-Project
+###     Author: Wei Zhang
+###     Date: 5/27/2020
 
-### Variables in tidy dataset
+###     Variables in tidy dataset
 
-subject 
-        An identifier of the subject who carried out the experiment
+subject:    An identifier of the subject who carried out the experiment
             
             value: 1:30
 
     
-activity:
-        Each person performed six activities wearing a smartphone
-            
-            WALKING
-            WALKING_UPSTAIRS
-            WALKING_DOWNSTAIRS
-            SITTING
-            STANDING
-            LAYING
+activity:   Each person performed six activities wearing a smartphone
+
+            value:
+                WALKING
+                WALKING_UPSTAIRS
+                WALKING_DOWNSTAIRS
+                SITTING
+                STANDING
+                LAYING
 
        
-mean() & std()
-        mean() and std() variables (total=66) for each measurement in the below list from feature_info.txt
-        tBodyAcc-XYZ
-        tGravityAcc-XYZ
-        tBodyAccJerk-XYZ
-        tBodyGyro-XYZ
-        tBodyGyroJerk-XYZ
-        tBodyAccMag
-        tGravityAccMag
-        tBodyAccJerkMag
-        tBodyGyroMag
-        tBodyGyroJerkMag
-        fBodyAcc-XYZ
-        fBodyAccJerk-XYZ
-        fBodyGyro-XYZ
-        fBodyAccMag
-        fBodyAccJerkMag
-        fBodyGyroMag
-        fBodyGyroJerkMag
+mean() & std():     mean() and std() variables (total=66) for each measurement in the below list from
+                feature_info.txt
+        
+        - tBodyAcc-XYZ
+        - tGravityAcc-XYZ
+        - tBodyAccJerk-XYZ
+        - tBodyGyro-XYZ
+        - tBodyGyroJerk-XYZ
+        - tBodyAccMag
+        - tGravityAccMag
+        - tBodyAccJerkMag
+        - tBodyGyroMag
+        - tBodyGyroJerkMag
+        - fBodyAcc-XYZ
+        - fBodyAccJerk-XYZ
+        - fBodyGyro-XYZ
+        - fBodyAccMag
+        - fBodyAccJerkMag
+        - fBodyGyroMag
+        - fBodyGyroJerkMag
          
-         
+            Value:
+            
              [1] "time_domain_Body_Acceleration-mean()-X_direction"          
              [2] "time_domain_Body_Acceleration-mean()-Y_direction"          
              [3] "time_domain_Body_Acceleration-mean()-Z_direction"          
@@ -110,6 +111,5 @@ mean() & std()
             [66] "frequency_domain_Body_Velocity_Jerk_Magnitude-std()"  
 
         
-average
-        the mean() of each variable in "mean() & std()" column for each activity and each subject
+average:       the mean() of each variable in "mean() & std()" column for each activity and each subject
     
