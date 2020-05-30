@@ -46,11 +46,12 @@ x_combined <- rbind(x_train, x_test)
 y_combined <- rbind(y_train, y_test) 
 subject_combined <- rbind(subject_train, subject_test) 
 
-##-------add subject, activity to x_combined to get the complete final data set---------##
+##-------add subject, activity to x_combined to get the required one data set---------##
 
 ## verify by dim: the 3 dataframes in cbind below have the same row number.
 mainDataSet <- cbind(subject_combined, y_combined, x_combined)  
 
+## mainDataSet is the required one data set, its dimension: [1] 10299   563 
 
 ############################################################################################################
 ##      2. Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -68,7 +69,7 @@ colnames(mainDataSet) <- c("subject", "activity", features$V2)
 
 mainDataSet_extract <- mainDataSet[c(1:2, grep('(mean|std)\\(\\)(-[X-Z])?$', colnames(mainDataSet)))]
 
-## mainDataSet_extract dimension: dim(mainDataSet_extract)       [1] 10299    66
+## mainDataSet_extract is the required extracted data set with dimention [1] 10299    66
 
 
 ############################################################################################################
