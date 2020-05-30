@@ -4,12 +4,12 @@
 
 ###     Variables in tidy dataset
 
-subject:    An identifier of the subject who carried out the experiment
+subject:    an identifier of the subject who carried out the experiment
             
         value: 1:30
 
     
-activity:   Each person performed six activities wearing a smartphone
+activity:   each person performed six activities wearing a smartphone
 
         value:
             
