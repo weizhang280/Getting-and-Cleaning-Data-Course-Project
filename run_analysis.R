@@ -120,3 +120,6 @@ tidy_dataset <- mainDataSet_extract %>%
 ##write tidy_DataSet to tidy_dataset.txt file
 write.table(tidy_dataset, file = "tidy_dataset.txt", row.names = FALSE)
 
+#output
+tidy_dataset
+
